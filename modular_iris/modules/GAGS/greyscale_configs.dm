@@ -14,7 +14,7 @@
 
 /datum/greyscale_config/hijab
 	name = "Hijab"
-	icon_file = 'modular_iris/icons/obj/clothing/suits/jacket.dmi'
+	icon_file = 'modular_iris/modules/GAGS/icons/head/head.dmi'
 	json_config = 'modular_iris/modules/GAGS/json_configs/head/hijab.json'
 
 /datum/greyscale_config/hijab/worn
