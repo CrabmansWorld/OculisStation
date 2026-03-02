@@ -19,7 +19,14 @@
 	VAR_FINAL/alerted = 0
 
 /datum/bounty/patrol/New()
-	demanded_area = pick(get_patrol_area_types() & GLOB.areas_by_type)
+	// OCULIS EDIT ADDITION START - FIXES A RUNTIME, ORIGINAL: demanded_area = pick(get_patrol_area_types() & GLOB.areas_by_type)
+	var/list/possible_areas = get_patrol_area_types() & GLOB.areas_by_type
+	if(!length(possible_areas))
+		name = name + ": BUGGED!"
+		description = initial(description) + " This bounty is BUGGED! We couldn't choose a target area!"
+		return
+	demanded_area = pick(possible_areas)
+	// OCULIS EDIT ADDITION END
 
 	var/total_coverage = 0
 	for(var/turf/open/floor/walkable in GLOB.areas_by_type[demanded_area].get_turfs_from_all_zlevels())
