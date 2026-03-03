@@ -526,9 +526,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 	// If we have sprite accessories that could go beyond the bounds of the standard 32x32, scale up to Canvas 1
 	if (
-		(body.dna.mutant_bodyparts["ears"] && body.dna.mutant_bodyparts["ears"]["name"] != "None") \
-		|| (body.dna.mutant_bodyparts["horns"] && body.dna.mutant_bodyparts["horns"]["name"] != "None") \
-		|| (body.dna.mutant_bodyparts["tail"] && body.dna.mutant_bodyparts["tail"]["name"] != "None") \
+		(body.dna.mutant_bodyparts["ears"] && body.dna.mutant_bodyparts["ears"].name != "None") \
+		|| (body.dna.mutant_bodyparts["horns"] && body.dna.mutant_bodyparts["horns"].name != "None") \
+		|| (body.dna.mutant_bodyparts["tail"] && body.dna.mutant_bodyparts["tail"].name != "None") \
 	)
 		canvas_size = 1
 		body.dna.features["body_size"] *= 4
@@ -556,7 +556,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			canvas_size = 2
 
 	// Being a taur scales us up to Canvas 3
-	if (body.dna.mutant_bodyparts["taur"] && body.dna.mutant_bodyparts["taur"]["name"] != "None")
+	if (body.dna.mutant_bodyparts["taur"] && body.dna.mutant_bodyparts["taur"].name != "None")
 		canvas_size = 3
 		if(body.dna.features["body_size"] >= 3.2)
 			body.dna.features["body_size"] /= 4
