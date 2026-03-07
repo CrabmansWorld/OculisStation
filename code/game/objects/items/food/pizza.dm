@@ -185,7 +185,7 @@
 /obj/item/food/pizzaslice/margherita/Initialize(mapload)
 	. = ..()
 	// OCULIS EDIT START - ingredient holder won't change custom slices to the default slice
-	AddComponent( /datum/component/ingredients_holder, /obj/item/food/pizzaslice/margherita, CUSTOM_INGREDIENT_ICON_FILL, max_ingredients = 12 )
+	AddComponent(/datum/component/ingredients_holder, /obj/item/food/pizzaslice/margherita, CUSTOM_INGREDIENT_ICON_FILL, max_ingredients = 12)
 	// OCULIS EDIT END
 
 /obj/item/food/pizza/meat
